@@ -5,10 +5,26 @@
     <title></title>
   </head>
   <body ng-controller='mainCtrl'>
+    <h1>Groceries</h1>
+    <ul>
+      <li style="list-style:none" ng-repeat="grocery in groceries">
+        <p ng-click="addItemToCart(grocery)">{{grocery.name}}</p>
+      </li>
+    </ul>
+
+    <div>
+      <h1>Cart</h1>
+      <ul>
+        <li style="list-style:none" ng-repeat="item in cart track by $index"><p>{{item.name}}</p></li>
+      </ul>
+      <p>Total: ${{total()}}</p>
+    </div>
+
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
 <script src="./app.js" charset="utf-8"></script>
 <script src="./controller.js" charset="utf-8"></script>
-<script src="./service.js" charset="utf-8"></script>
+<script src="./services.js" charset="utf-8"></script>
   </body>
 </html>
